@@ -14,10 +14,11 @@ const menuArray = [
         id: 1
     },
         {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
+        name: "Cola",
+        ingredients: ["carbonated water", "sugar", "caramel color"],
         price: 12,
-        emoji: "🍺",
+        emoji: "🥤",
         id: 2
     }
 ]
+export default menuArray

@@ -1,3 +1,51 @@
 body {
     margin: 0;
+    font-family: "Smythe", system-ui;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 } 
+.container {
+    width: 100%;
+    position: relative;
+    
+}
+.burger{
+    height: 400px;
+    width: 100%;
+}
+.foodKinds{
+    width : 100%; 
+    padding : 15px 0 ; 
+    margin-top: 5px 0;
+}
+.item{
+    border-bottom:1px solid #252525;
+    
+    width : 482px ; 
+    display: flex;
+    padding: 16px 0  ;
+    height: 140px ;
+    font-size: 20px;
+}
+.emoji{
+    font-size: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px 10px ;
+}
+.name{
+    color : #ffffff;
+    position: absolute;
+    top : 20px ;
+    font-size: 15px ;
+    margin-left: 20px;
+
+}
+span{
+    font-size: 30px ;
+    margin-bottom: 6px ;
+    margin-left: 20px ;
+}
