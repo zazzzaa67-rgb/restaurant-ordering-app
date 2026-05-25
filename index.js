@@ -27,7 +27,9 @@ const orders = []
 renderkinds(menuArray)
 document.addEventListener("click" , function(e){
     if(e.target.className === "add" || e.target.classList.contains("fa-solid")){
-        orders.push([menuArray[Number(e.target.id)].name , menuArray[Number(e.target.id)].price] )
+        const itemId = Number(e.target.closest(".add").id)
+
+        orders.push([menuArray[itemId].name , menuArray[itemId].price , menuArray[itemId].price]   )
         add()
     }
     
@@ -41,21 +43,29 @@ function add(){
         <h2>Your order</h2>
         <div id="meals">
         </div>
-        <div class="totalPrice">
+        <div id="totalPrice">
         
         </div>
     </div> 
     `
     const meals = document.getElementById("meals")
+    const totalPrice = document.getElementById("totalPrice")
     let orderId = Math.floor(Math.random() * 10 )
-    orders.map(order => 
+    let total = 0 
+
+    orders.forEach(order  =>{
         meals.innerHTML += `
         <div class="order" id=${orderId}>
-            <p>${order[0]}<p>
-            <button id="remove" >remove</button>
-            <p id="price">${order[1]}</p>
+            <p>${order[0]}</p>
+            <button class="remove" >remove</button>
+            <p id="price">$${order[1]}</p>
         </div>`
-    )
+        total += order[2]}
+)
+    totalPrice.innerHTML = `<div class="container">
+    <h3>Total price :  </h3>
+    <p>${total}</p></h3>
+    </div>`
 }
 
 

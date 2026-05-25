@@ -73,11 +73,21 @@ span{
     width : 300px;
     display: flex;
 }
-#remove{
+.remove{
     margin-left:20px  ;
     border: none;
     color:#808080;
+    background-color: #ffffff;
+    margin-top: 2px ;
+    cursor: pointer;
+    font-size: 15px ;
 }
-#price{
+#price ,#totalPrice h3 span{
     margin-left: auto;
+    
+}
+#totalPrice{
+    border-top: 2px solid black;
+    font-size: 1.87rem ;
+    width : 100%
 }
