@@ -69,3 +69,15 @@ span{
     box-shadow:2px 2px  22px red ;
     cursor : pointer;
 }
+.order{
+    width : 300px;
+    display: flex;
+}
+#remove{
+    margin-left:20px  ;
+    border: none;
+    color:#808080;
+}
+#price{
+    margin-left: auto;
+}

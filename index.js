@@ -23,21 +23,39 @@ function renderkinds(arr){
     
 }
 
-function addOrder(add){
-    const orders = []
-    if (Number(add) === 0){
-        orders.push(
-            `
-                <p id="order"></p>
-            `
-        )
-    }
-}
-    
-
-
-
+const orders = []
 renderkinds(menuArray)
 document.addEventListener("click" , function(e){
-
+    if(e.target.className === "add" || e.target.classList.contains("fa-solid")){
+        orders.push([menuArray[Number(e.target.id)].name , menuArray[Number(e.target.id)].price] )
+        add()
+    }
+    
 })
+    
+function add(){
+    const orderscon = document.getElementById("order")
+
+    orderscon.innerHTML = `
+    <div class="orderscon">
+        <h2>Your order</h2>
+        <div id="meals">
+        </div>
+        <div class="totalPrice">
+        
+        </div>
+    </div> 
+    `
+    const meals = document.getElementById("meals")
+    let orderId = Math.floor(Math.random() * 10 )
+    orders.map(order => 
+        meals.innerHTML += `
+        <div class="order" id=${orderId}>
+            <p>${order[0]}<p>
+            <button id="remove" >remove</button>
+            <p id="price">${order[1]}</p>
+        </div>`
+    )
+}
+
+
