@@ -23,12 +23,14 @@ body {
 }
 .item{
     border-bottom:1px solid #252525;
-    
     width : 482px ; 
-    display: flex;
+    display: flex ;
     padding: 16px 0  ;
     height: 140px ;
     font-size: 20px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
 }
 .emoji{
     font-size: 60px;
@@ -48,4 +50,22 @@ span{
     font-size: 30px ;
     margin-bottom: 6px ;
     margin-left: 20px ;
+}
+.food{
+    display: flex;
+}
+.add{
+    background-color: #ffffff;
+    color : #252525;
+    font-weight:500;
+    font-size: 1rem;
+    border : solid 0.5px #252525;
+    border-radius: 50%;
+    width : 50px ;
+    height: 50px ;
+    text-align: center;
+    margin-top: auto;   
+    margin-bottom: auto; 
+    box-shadow:2px 2px  22px red ;
+    cursor : pointer;
 }
