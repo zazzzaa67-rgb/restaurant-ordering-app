@@ -1,5 +1,6 @@
 import  menuArray from './data.js'
 const foodKinds = document.getElementById("foodKinds")
+const card = document.getElementById("details")
 let html = []
 function renderkinds(arr){
     arr.map(item =>{
@@ -28,11 +29,20 @@ renderkinds(menuArray)
 document.addEventListener("click" , function(e){
     if(e.target.className === "add" || e.target.classList.contains("fa-solid")){
         const itemId = Number(e.target.closest(".add").id)
-
         orders.push([menuArray[itemId].name , menuArray[itemId].price , menuArray[itemId].price]   )
         add()
+    }else if(e.target.id == "complete"){
+        card.innerHTML = `
+        <form id="card">
+            <h3>Enter your details</h3>
+            <input id="name" class="detail" placeholder="Enter your name " required>
+
+            <input id="cardNumber" class="detail" placeholder="Enter your card number" required>
+            <input id="cvv" class="detail" placeholder="Enter CVV" required >
+            <button id="pay">Pay</button>
+        </form>
+        `
     }
-    
 })
     
 function add(){
@@ -56,16 +66,20 @@ function add(){
     orders.forEach(order  =>{
         meals.innerHTML += `
         <div class="order" id=${orderId}>
-            <p>${order[0]}</p>
+            <p id="order">${order[0]}</p>
             <button class="remove" >remove</button>
             <p id="price">$${order[1]}</p>
         </div>`
         total += order[2]}
 )
-    totalPrice.innerHTML = `<div class="container">
-    <h3>Total price :  </h3>
-    <p>${total}</p></h3>
+    totalPrice.innerHTML = 
+    `<div class="container">
+        <h3>Total price :  </h3>
+        <p class="total">$${total}</p>
     </div>`
+    const complete =document.getElementById("complete")
+    complete.style.display = "block"
+    complete.style.textAlign = "center"  
 }
 
 

@@ -10,6 +10,8 @@ body {
 .container {
     width: 100%;
     position: relative;
+    display: flex;
+    justify-content: space-around;
     
 }
 .burger{
@@ -89,5 +91,67 @@ span{
 #totalPrice{
     border-top: 2px solid black;
     font-size: 1.87rem ;
-    width : 100%
+    width : 100%;
+    display : flex;
+}
+.total{
+    margin-top: 41px;
+}
+#complete{
+    display: none;
+}
+#complete , #pay {
+    width : 344px ;
+    background-color: #16DB99;
+    color :#ffffff;
+    border : solid 1px #ffffff;
+    font-weight: bold;
+    padding : 16px 8px ;
+    border : none;
+    border-radius: 16px ;
+    font-size: 1.1rem;
+    margin: 10px auto ;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px auto;
+
+}
+#order{
+    font-size: 1.5rem;
+}
+#card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    color : #252525;
+    width : 524px ; 
+    height: 542.240478515625px;
+    background-color: #ffffff;
+    padding : 15px 20px ; 
+    border:none;
+    border-radius:3.89px ;
+    position: fixed;
+    margin: auto;
+    top : 50%; 
+    bottom: 50%;
+}
+#pay{
+    width: 250px ;
+    background-color: #16DB99;
+}
+.detail{
+    width : 475.911376953125px;
+    height: 71.30380249023438px;
+    border:solid 2px #757575;
+    border-radius: 3.89px;
+    font-weight: 700;
+    text-align: center;
+}
+h3{
+    font-size: 1.7rem;
+}
+#details{
+    width: 100%;
 }
