@@ -2,7 +2,6 @@ import  menuArray from './data.js'
 const foodKinds = document.getElementById("foodKinds")
 const card = document.getElementById("details")
 const complete =document.getElementById("complete")
-
 let html = []
 function renderkinds(arr){
     arr.map(item =>{
@@ -43,51 +42,51 @@ document.addEventListener("click" , function(e){
             <input id="cardNumber" class="detail" placeholder="Enter your card number" required>
             <input id="cvv" class="detail" placeholder="Enter CVV" required >
             <button id="pay">Pay</button>
-        </form>
-        `
-    }else if (e.target.id == "pay"){
-        e.preventDefault()
-        let  info = document.getElementsByClassName("detail")
-        let allfilled = true
-        for(let input of info ){
-            if (input.value.trim() == ''){
-                allfilled = false
-                break
+            </form>
+            `
+        }else if (e.target.id == "pay"){
+            e.preventDefault()
+            let  info = document.getElementsByClassName("detail")
+            let allfilled = true
+            for(let input of info ){
+                if (input.value.trim() == ''){
+                    allfilled = false
+                    break
+                }
             }
-        }
-        if(allfilled){
+            if(allfilled){
 
-            let form = new FormData(document.getElementById("card"))
-            card.style.display = 'none'
-            complete.style.display = "none"
-            orderscon.innerHTML = `
-            <div class="done">
+                let form = new FormData(document.getElementById("card"))
+                card.style.display = 'none'
+                complete.style.display = "none"
+                orderscon.innerHTML = `
+                <div class="done">
                 <p>Thanks, ${form.get('name')} . your Order is on its way</p>
-            </div>`
-        }else(
-            alert("Enter your details")
-        )
-        
-    }
-})
+                </div>`
+                orders.length = 0
+            }else(
+                alert("Enter your details")
+            )
+        }
+    })
     
-const orderscon = document.getElementById("order")
-function add(){
-
-    orderscon.innerHTML = `
-    <h2>Your order</h2>
-    <div class="orderscon">
+    const orderscon = document.getElementById("order")
+    function add(){
+        
+        orderscon.innerHTML = `
+        <h2>Your order</h2>
+        <div class="orderscon">
         <div id="meals">
         </div>
         <div id="totalPrice">
         
         </div>
-    </div> 
-    `
-    const meals = document.getElementById("meals")
-    const totalPrice = document.getElementById("totalPrice")
-    let orderId = Math.floor(Math.random() * 10 )
-    let total = 0 
+        </div> 
+        `
+        const totalPrice = document.getElementById("totalPrice")
+        let orderId = Math.floor(Math.random() * 10 )
+        let total = 0 
+        const meals = document.getElementById("meals")
 
     orders.forEach(order  =>{
         meals.innerHTML += `
